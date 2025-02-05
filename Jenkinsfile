@@ -2,7 +2,7 @@ pipeline {
     agent any  // Runs on any available agent
     
     environment {
-        DOCKER_IMAGE = "your-dockerhub-username/simple-python-app"
+        DOCKER_IMAGE = "kishoreommini/simple-python-app"
         DOCKER_TAG = "latest"
     }
 
