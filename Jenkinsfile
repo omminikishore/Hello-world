@@ -9,7 +9,7 @@ pipeline {
     stages {
         stage('Clone Repository') {
             steps {
-                git 'https://github.com/omminikishore/Hello-world.git'
+               sh git 'https://github.com/omminikishore/Hello-world.git'
             }
         }
 
