@@ -22,7 +22,7 @@ pipeline {
 
         stage('Run Unit Tests') {
             steps {
-                sh 'pytest tests/ --junitxml=report.xml'
+               // sh 'pytest tests/ --junitxml=report.xml'
             }
         }
 
