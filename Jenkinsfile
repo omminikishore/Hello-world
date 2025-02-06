@@ -2,6 +2,7 @@ pipeline {
     agent any  // Runs on any available agent
     
     environment {
+         VENV_DIR = 'venv'
         DOCKER_IMAGE = "kishoreommini/simple-python-app"
         DOCKER_TAG = "latest"
     }
@@ -15,7 +16,13 @@ pipeline {
 
         stage('Install Dependencies') {
             steps {
-                sh 'pip install -r requirements.txt'
+                //sh 'pip install -r requirements.txt'
+                 sh 'python3 -m venv ${VENV_DIR}'
+                 sh '''
+                        source ${VENV_DIR}/bin/activate
+                        pip install --upgrade pip
+                        pip install -r requirements.txt
+                    '''
             }
         }
 
